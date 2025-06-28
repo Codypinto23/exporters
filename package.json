@@ -42,8 +42,9 @@
   "homepage": "https://github.com/material-table-core/exporters#readme",
   "dependencies": {
     "filefy": "^0.1.11",
-    "jspdf": "^2.5.1",
-    "jspdf-autotable": "^3.6.0"
+    "jspdf": "^3.0.1",
+    "jspdf-autotable": "^4.0.0",
+    "is-extglob": "^2.1.1"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.23.2",
@@ -70,14 +71,17 @@
     "./package.json": "./package.json",
     ".": {
       "import": {
+        "source": "./src/index.ts",
         "types": "./dist/esm/index.d.ts",
         "default": "./dist/esm/index.js"
       },
       "require": {
+        "source": "./src/index.ts",
         "types": "./dist/commonjs/index.d.ts",
         "default": "./dist/commonjs/index.js"
       }
     }
   },
-  "main": "./dist/commonjs/index.js"
+  "main": "./dist/commonjs/index.js",
+  "module": "./dist/esm/index.js"
 }
